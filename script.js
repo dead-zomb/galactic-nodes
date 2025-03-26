@@ -4,13 +4,13 @@ function createShootingStar() {
     const star = document.createElement('div');
     star.className = 'star shooting-star';
     
-    // Randomly position the star on the horizontal axis
-    const startPosition = Math.random() < 0.5 ? window.innerWidth : -10; // Start from left or right
+    // Start from the right and move left
+    const startPosition = window.innerWidth; // Start from the right edge
     const randomTop = Math.random() * 100; // Random Y position
 
     star.style.left = `${startPosition}px`;
     star.style.top = `${randomTop}vh`;
-    star.style.animationDuration = `${Math.random() * 2 + 0.5}s`; // Random duration for variety
+    star.style.animationDuration = `${Math.random() * 2 + 0.5}s`; // Duration between 0.5 to 2.5 seconds
 
     shootingStarsContainer.appendChild(star);
     
@@ -28,10 +28,10 @@ function createStaticStar() {
     const star = document.createElement('div');
     star.className = 'static-star';
     
-    // Random position
+    // Random positions
     const randomLeft = Math.random() * 100; // Random X position from 0% to 100%
     const randomTop = Math.random() * 100;  // Random Y position from 0% to 100%
-    
+
     // Random size
     const size = Math.random() * 3 + 1; // Size between 1px and 3px
     star.style.width = `${size}px`;
@@ -39,13 +39,11 @@ function createStaticStar() {
 
     star.style.left = `${randomLeft}vw`;
     star.style.top = `${randomTop}vh`;
-    
-    star.style.animation = `staticStar ${Math.random() * 2 + 1}s infinite`; // Animation for twinkling effect
 
     shootingStarsContainer.appendChild(star);
 }
 
 // Create static stars
-for (let i = 0; i < 50; i++) { // Adjust number for more or less static stars
+for (let i = 0; i < 50; i++) { // Create 50 static stars for example
     createStaticStar();
 }
