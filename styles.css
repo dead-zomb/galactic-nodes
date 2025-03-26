@@ -73,6 +73,7 @@ h1 {
     grid-template-columns: repeat(2, 1fr); /* Two boxes per row */
     gap: 20px; /* Space between boxes */
     flex: 1; /* Allow hosting details to expand */
+    margin-left: 100px; /* Move boxes more to the right */
 }
 
 .hosting-box {
@@ -109,17 +110,6 @@ footer {
     padding: 20px;
 }
 
-.sun-placeholder {
-    position: absolute;
-    top: 20px; /* Position it at the top left */
-    left: 20px;
-    width: 50px; /* Size of the sun */
-    height: 50px;
-    background: url('images/sun.png') no-repeat center; /* Path to the sun image */
-    background-size: contain; 
-    filter: drop-shadow(0 0 20px yellow); /* Yellow glow */
-}
-
 .shooting-stars {
     position: absolute;
     top: 0;
@@ -132,10 +122,13 @@ footer {
 
 .star {
     position: absolute;
-    width: 2px;
-    height: 2px;
-    background: white;
+    width: 4px; /* Size of stars */
+    height: 4px;
+    background: white; /* Color of the stars */
     opacity: 0.8; /* Slightly transparent */
+}
+
+.shooting-star {
     animation: shootingStar 1s infinite;
 }
 
@@ -145,19 +138,27 @@ footer {
         opacity: 1;
     }
     100% {
-        transform: translateY(-100vh) translateX(-100vw);
+        transform: translateY(-100vh) translateX(-100vw); /* Move stars off the screen */
         opacity: 0;
     }
 }
 
-/* Animation for shooting stars with random positions */
-@keyframes randomStar {
-    from {
-        transform: translateY(0) translateX(0);
+/* Static stars on the background */
+.static-star {
+    position: absolute;
+    border-radius: 50%;
+    background: white;
+    opacity: 0.9;
+}
+
+@keyframes staticStar {
+    0% {
+        opacity: 0.8;
+    }
+    50% {
         opacity: 1;
     }
-    to {
-        transform: translateY(-100vh) translateX(-100vw);
-        opacity: 0;
+    100% {
+        opacity: 0.8;
     }
 }
