@@ -6,12 +6,12 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background: black; /* Main background color */
-    color: purple; /* Text color */
+    background: black; 
+    color: purple; 
     position: relative;
-    min-height: 100vh; /* Ensure body is at least full height */
+    min-height: 100vh; 
     display: flex;
-    flex-direction: column; /* Allow footer to be at the bottom */
+    flex-direction: column; 
 }
 
 header {
@@ -42,14 +42,14 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #FFCC00; /* Change to gold on hover */
+    color: #FFCC00; 
 }
 
 .hero {
     display: flex;
     align-items: flex-start;
-    padding: 40px 0; /* Added padding for spacing */
-    flex: 1; /* Allow hero section to expand to take up available space */
+    padding: 40px 0; 
+    flex: 1; 
 }
 
 .content {
@@ -69,11 +69,11 @@ h1 {
 }
 
 .hosting-details {
-    display: grid; /* Use grid to arrange boxes */
-    grid-template-columns: repeat(2, 1fr); /* Two boxes per row */
-    gap: 20px; /* Space between boxes */
-    flex: 1; /* Allow hosting details to expand */
-    margin-left: 150px; /* Move boxes more to the right */
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px; 
+    flex: 1; 
+    margin-left: 150px; 
 }
 
 .hosting-box {
@@ -84,26 +84,26 @@ h1 {
 }
 
 .button-container {
-    text-align: center; /* Center button below boxes */
+    text-align: center;
     margin-top: 6px;
-    margin-left: 10px; /* Shift button slightly to the left */
+    margin-left: 10px; 
 }
 
 .cta-button {
-    background: purple; /* Button color */
-    color: white; /* Button text color */
+    background: purple; 
+    color: white;
     padding: 15px 30px;
     border: none;
     border-radius: 5px;
     font-size: 18px;
     text-decoration: none;
-    transition: all 0.3s; /* Transition for glow and size */
+    transition: all 0.3s; 
 }
 
 .cta-button:hover {
-    background: #8A2BE2; /* Slightly different purple on hover */
-    transform: scale(1.1); /* Scale up the button on hover */
-    box-shadow: 0 0 20px purple; /* Neon glow effect */
+    background: #8A2BE2; 
+    transform: scale(1.1); 
+    box-shadow: 0 0 20px purple; 
 }
 
 footer {
@@ -112,7 +112,7 @@ footer {
 }
 
 .policy-button {
-    background: purple; /* Button color for privacy policy */
+    background: purple; 
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
@@ -121,13 +121,13 @@ footer {
 }
 
 .policy-button:hover {
-    background: #8A2BE2; /* Change to slightly different purple on hover */
+    background: #8A2BE2; 
 }
 
 .shooting-stars {
     position: absolute;
     top: 0;
-    right: 0; /* Start shooting stars from the right */
+    right: 0; 
     width: 100%;
     height: 100%;
     pointer-events: none;
@@ -136,10 +136,10 @@ footer {
 
 .star {
     position: absolute;
-    width: 4px; /* Size of stars */
+    width: 4px; 
     height: 4px;
-    background: white; /* Color of the stars */
-    opacity: 1; /* Fully opaque for stars */
+    background: white; 
+    opacity: 1; 
 }
 
 .shooting-star {
@@ -152,12 +152,12 @@ footer {
         opacity: 1;
     }
     100% {
-        transform: translateY(-100vh) translateX(-100vw); /* Move stars off the screen */
+        transform: translateY(-100vh) translateX(-100vw); 
         opacity: 0;
     }
 }
 
-/* Static stars on the background */
+
 .static-star {
     position: absolute;
     border-radius: 50%;
