@@ -6,11 +6,11 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    overflow: hidden;
+    overflow: hidden; /* Prevent static scrolling */
     background: black; /* Main background color */
     color: purple; /* Text color */
     position: relative;
-    height: 100vh;
+    height: auto; /* Change height to auto for scrolling */
 }
 
 header {
@@ -51,7 +51,7 @@ nav ul li a:hover {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: calc(100vh - 100px); /* Adjust height to fit header and footer */
+    padding: 40px 0; /* Added padding for spacing */
     text-align: center;
     position: relative;
     z-index: 10;
@@ -84,6 +84,7 @@ h1 {
     font-size: 18px;
     text-decoration: none;
     transition: all 0.3s; /* Transition for glow and size */
+    margin-left: auto; /* Push button to the right */
 }
 
 .cta-button:hover {
@@ -92,17 +93,12 @@ h1 {
     box-shadow: 0 0 20px purple; /* Neon glow effect */
 }
 
-.button-container {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-left: 20px;
-}
-
 .hosting-details {
-    display: flex;
-    margin-top: 20px;
+    display: grid; /* Use grid to arrange boxes */
+    grid-template-columns: repeat(2, 1fr); /* Two boxes per row */
+    gap: 20px; /* Space between boxes */
+    width: 80%;
+    margin: 20px auto;
 }
 
 .hosting-box {
@@ -110,8 +106,6 @@ h1 {
     border: 1px solid purple;
     border-radius: 8px;
     padding: 15px;
-    margin-left: 10px;
-    width: 150px; /* Fixed width */
 }
 
 footer {
