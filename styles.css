@@ -85,8 +85,8 @@ h1 {
 
 .button-container {
     text-align: center; /* Center button below boxes */
-    margin-top: 20px;
-    margin-left: 100px; /* Shift button slightly to the left */
+    margin-top: 6px;
+    margin-left: 10px; /* Shift button slightly to the left */
 }
 
 .cta-button {
