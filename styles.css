@@ -6,11 +6,12 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    overflow: hidden; /* Prevent static scrolling */
     background: black; /* Main background color */
     color: purple; /* Text color */
     position: relative;
-    height: auto; /* Change height to auto for scrolling */
+    min-height: 100vh; /* Ensure body is at least full height */
+    display: flex;
+    flex-direction: column; /* Allow footer to be at the bottom */
 }
 
 header {
@@ -18,8 +19,6 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    position: relative;
-    z-index: 10;
 }
 
 .logo {
@@ -48,19 +47,13 @@ nav ul li a:hover {
 
 .hero {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
     padding: 40px 0; /* Added padding for spacing */
-    text-align: center;
-    position: relative;
-    z-index: 10;
+    flex: 1; /* Allow hero section to expand to take up available space */
 }
 
 .content {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
     width: 80%;
     margin: 0 auto;
 }
@@ -75,30 +68,11 @@ h1 {
     margin-bottom: 20px;
 }
 
-.cta-button {
-    background: purple; /* Button color */
-    color: white; /* Button text color */
-    padding: 15px 30px;
-    border: none;
-    border-radius: 5px;
-    font-size: 18px;
-    text-decoration: none;
-    transition: all 0.3s; /* Transition for glow and size */
-    margin-left: auto; /* Push button to the right */
-}
-
-.cta-button:hover {
-    background: #8A2BE2; /* Slightly different purple on hover */
-    transform: scale(1.1); /* Scale up the button on hover */
-    box-shadow: 0 0 20px purple; /* Neon glow effect */
-}
-
 .hosting-details {
     display: grid; /* Use grid to arrange boxes */
     grid-template-columns: repeat(2, 1fr); /* Two boxes per row */
     gap: 20px; /* Space between boxes */
-    width: 80%;
-    margin: 20px auto;
+    flex: 1; /* Allow hosting details to expand */
 }
 
 .hosting-box {
@@ -108,11 +82,31 @@ h1 {
     padding: 15px;
 }
 
+.button-container {
+    text-align: center; /* Center button below boxes */
+    margin-top: 20px;
+}
+
+.cta-button {
+    background: purple; /* Button color */
+    color: white; /* Button text color */
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    text-decoration: none;
+    transition: all 0.3s; /* Transition for glow and size */
+}
+
+.cta-button:hover {
+    background: #8A2BE2; /* Slightly different purple on hover */
+    transform: scale(1.1); /* Scale up the button on hover */
+    box-shadow: 0 0 20px purple; /* Neon glow effect */
+}
+
 footer {
     text-align: center;
     padding: 20px;
-    position: relative;
-    z-index: 10;
 }
 
 .sun-placeholder {
@@ -141,16 +135,29 @@ footer {
     width: 2px;
     height: 2px;
     background: white;
+    opacity: 0.8; /* Slightly transparent */
     animation: shootingStar 1s infinite;
 }
 
 @keyframes shootingStar {
     0% {
-        transform: translateX(0);
+        transform: translateY(0) translateX(0);
         opacity: 1;
     }
     100% {
-        transform: translateX(-100vw);
+        transform: translateY(-100vh) translateX(-100vw);
+        opacity: 0;
+    }
+}
+
+/* Animation for shooting stars with random positions */
+@keyframes randomStar {
+    from {
+        transform: translateY(0) translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-100vh) translateX(-100vw);
         opacity: 0;
     }
 }
